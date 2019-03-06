@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Private.css'
 import {connect} from 'react-redux'
 import axios from 'axios'
 import {updateUser} from '../../geese/reducer'
@@ -11,8 +10,8 @@ class Private extends Component {
         this.getUser();
     }
     getUser = async () => {
-        const { id } = this.props;
-        if (!id){
+        const { artist_id } = this.props;
+        if (!artist_id){
             
             try {
            let res = await axios.get('api/current')
@@ -55,3 +54,5 @@ const mapDispatchToProps = {
     clearUser
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Private);
+
+

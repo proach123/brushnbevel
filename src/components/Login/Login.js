@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Login.css'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import {updateUser} from './../../geese/reducer'

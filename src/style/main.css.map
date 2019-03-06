@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "ACAA,AAAA,IAAI,CAAA;EACA,gBAAgB,EAAE,GAAU;CAC/B",
+    "sources": [
+        "main.scss",
+        "dashboard.scss",
+        "gallery.scss",
+        "login.scss",
+        "private.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
