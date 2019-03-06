@@ -16,8 +16,8 @@ class Login extends Component {
         this.checkUser();
     }
     checkUser = async () => {
-        const {id}= this.props;
-        if(!id) {
+        const {artist_id}= this.props;
+        if(!artist_id) {
             try {
                 let res = await axios.get('api/current')
                 this.props.updateUser(res.data)

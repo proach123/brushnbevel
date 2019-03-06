@@ -15,7 +15,7 @@ description VARCHAR(250),
 artist_id integer,
 painting_url text,
 price INTEGER,
-gallery_approved boolean 
+gallery_approved boolean DEFAULT false
 )
 
 

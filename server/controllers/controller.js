@@ -49,6 +49,14 @@ module.exports = {
             res.sendStatus(401)
         }
     },
+    acess: (req, res) => {
+        const {authorized} =req.session;
+        if(authorized){
+            res.status(200).send(authorized)
+        }else {
+            res.sendStatus(409)
+        }
+    },
     destroySession: (req, res) => {
         req.session.destroy();
         res.sendStatus(200)

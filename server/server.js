@@ -4,7 +4,8 @@ const express = require('express'),
     massive = require('massive'),
     ctrl = require('./controllers/controller'),
     pg = require('pg'),
-    pgSession = require('connect-pg-simple')(sessions)
+    pgSession = require('connect-pg-simple')(sessions),
+    gctrl = require('./controllers/gallerycntrl')
     
 
     const app = express(),
@@ -39,5 +40,7 @@ app.post('/auth/logout',ctrl.destroySession);
 
 
 app.get('/api/current', ctrl.getUser)
-
+// app.get('./api/isadmin', ctrl.acess)
 //gallery displaying
+app.post('/api/gallery', gctrl.createArt)
+// app.get('/api/artistgallery', gctrl.getartwork)

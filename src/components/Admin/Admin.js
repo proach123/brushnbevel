@@ -4,11 +4,11 @@ import axios from 'axios'
 import {updateUser} from '../../geese/reducer'
 import {clearUser} from '../../geese/reducer'
 
-class Gallery extends Component{
+class Admin extends Component{
 
     render(){
         return(
-        <div>Gallery Component</div>
+        <div>Admin Component</div>
         )
     }
 
@@ -23,4 +23,4 @@ const mapDispatchToProps = {
     updateUser,
     clearUser
 }
-export default connect(mapStateToProps,mapDispatchToProps)(Gallery);
+export default connect(mapStateToProps,mapDispatchToProps)(Admin);
