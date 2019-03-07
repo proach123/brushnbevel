@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 import axios from 'axios'
 import {updateUser} from '../../geese/reducer'
 import {clearUser} from '../../geese/reducer'
+import '../../style/private.scss'
+
 
 class Private extends Component {
 
@@ -14,6 +16,8 @@ class Private extends Component {
             description: '',
             painting_url: '',
             price: '',
+            artworks: [],
+            img:''
 
         }
 
@@ -23,6 +27,8 @@ class Private extends Component {
     componentDidMount() {
         this.getUser();
         this.checkUser();
+        this.getArt();
+
     }
 
     checkUser = async () => {
@@ -54,19 +60,23 @@ class Private extends Component {
 
     }
 
-    // getArtwork = async () => {
-    //     const {id}= this.props;
-    //     if(artist_id == session) {
-    //         try {
-    //             let res = await axios.get('api/current')
-    //             this.props.updateUser(res.data)
-    //             this.props.history.push('/private')
-    //              } catch (err) {
-    //              }
-    //     } else {
-    //         this.props.history.push('/private')
-    //     }
-    // }
+    getArt(){
+        axios.get('/api/gallery').then(res => {
+            console.log(res.data)
+            this.setState({
+                artworks: res.data
+            })
+        })
+    }
+
+    deleteArt = id => {
+        console.log(id);
+        axios.delete(`/api/gallery/${id}`).then(res => {
+          this.setState({
+            artworks: res.data
+          });
+        });
+      };
 
     handleChange(prop, val){
         console.log(prop, val)
@@ -94,6 +104,15 @@ class Private extends Component {
         try {
                 console.log(art)
             let res = await axios.post('/api/gallery', art);
+            this.setState({
+                title: '',
+            description: '',
+            painting_url: '',
+            price: '',
+            artworks: [],
+            img:''
+            })
+            this.getArt();
         } catch(err) {
             alert('Artwork submission failed')
         }
@@ -101,18 +120,25 @@ class Private extends Component {
 
     render() {
         
-        // const { username, img, balance } = this.props;
-        
+        const { username, img, balance } = this.props;
+        const artworks = this.state.artworks.map((artwork) => {
+            console.log(artwork.painting_url)
+            return (
+                <div className='artworkdisplay'>
+                    <h3>{artwork.name}</h3>
+                    <img src={artwork.painting_url} />
+                    <p>{artwork.description}</p>
+                    <p>{artwork.price}</p>
+                    
+                        <button onClick={() => this.deleteArt(artwork.id)}>
+                            Delete
+                        </button>
+                    
+                </div>
+                
+            )
+        })
         const { title, description, painting_url, price} = this.state
-        // const artworks = this.state.artworks.map((artwork) => {
-        //     return (
-        //         <div>
-        //             <h3>{artwork.name}</h3>
-        //             <img/>
-        //             <p>Price</p>
-        //         </div>
-        //     )
-        // })
         return (
             
             <div>
@@ -122,10 +148,12 @@ class Private extends Component {
                 <input value={price}  onChange={e => this.handleChange('price',e.target.value)} placeholder='price' />
                 <button onClick={this.postArt}>Submit Art</button>
                 <button onClick={this.destroySession}>Logout</button>
-                {/* <h1>{username}</h1>
+                <h1>{username}</h1>
                 <img src={img} alt='user' />
-                <p>{balance}</p> */}
-                {/* {artworks} */}
+                <p>{balance}</p>
+                <div className='displayflex'>
+                <div className='artistDisplay'>{artworks}</div>
+                </div>
             </div>
         )
     }
@@ -141,5 +169,8 @@ const mapDispatchToProps = {
     clearUser
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Private);
+
+
+
 
 

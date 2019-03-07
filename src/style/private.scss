@@ -1,0 +1,31 @@
+
+.displayflex{
+    
+}
+
+.artistDisplay{
+
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+   background: lightgrey;
+}
+
+.artworkdisplay img{
+    width: 25vw;
+    height: 39vh;
+    margin: 5px;
+}
+
+.artworkdisplay {
+    width: 28vw;
+    height: 50vh;
+    margin: 5px;
+    position: relative;
+    right: 10vw;
+    background: whitesmoke;
+}
+

@@ -1,4 +1,109 @@
 body {
-  background-color: 255;
+  background: whitesmoke;
+  height: 200vh;
+  margin: 0;
+}
+
+.dashblogpost {
+  background: white;
+  height: 50vh;
+  width: 100vw;
+  position: relative;
+  top: 15vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+}
+
+.dashnav {
+  background: white;
+  position: fixed;
+  height: 6vh;
+  width: 100%;
+  bottom: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+}
+
+.dashnav .dashnavlogo {
+  position: absolute;
+  height: 5vh;
+  width: 5vw;
+  left: 5vw;
+  bottom: 7vh;
+}
+
+.treeimg {
+  width: 100vw;
+  height: 90vh;
+}
+
+.dashlogo {
+  height: 5vh;
+  width: 5vw;
+}
+
+.artistDisplay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background: lightgrey;
+}
+
+.artworkdisplay img {
+  width: 25vw;
+  height: 39vh;
+  margin: 5px;
+}
+
+.artworkdisplay {
+  width: 28vw;
+  height: 50vh;
+  margin: 5px;
+  position: relative;
+  right: 10vw;
+  background: whitesmoke;
 }
 /*# sourceMappingURL=main.css.map */

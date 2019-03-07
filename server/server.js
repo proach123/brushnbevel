@@ -43,4 +43,5 @@ app.get('/api/current', ctrl.getUser)
 // app.get('./api/isadmin', ctrl.acess)
 //gallery displaying
 app.post('/api/gallery', gctrl.createArt)
-// app.get('/api/artistgallery', gctrl.getartwork)
+app.get('/api/gallery', gctrl.showArtistArt)
+app.delete('/api/gallery/:id', gctrl.deleteArt)
