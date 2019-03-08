@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { connect } from 'react-redux'
 import {updateUser} from './../../geese/reducer'
+import { Link } from 'react-router-dom'
 
 class Login extends Component {
     constructor(props) {
@@ -71,6 +72,9 @@ class Login extends Component {
                <input type='password' value={password} onChange={e => this.handleChange('password', e.target.value)} />
                <button onClick={this.register}>Register</button>
                <button onClick={this.login}>Login </button>
+               <Link to={`/`}>
+            <button>Home</button>
+            </Link>
             </div>
         )
     }

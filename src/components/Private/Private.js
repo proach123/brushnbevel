@@ -17,8 +17,8 @@ class Private extends Component {
             painting_url: '',
             price: '',
             artworks: [],
-            img:''
-
+            img:'',
+            
         }
 
 
@@ -60,6 +60,7 @@ class Private extends Component {
 
     }
 
+
     getArt(){
         axios.get('/api/gallery').then(res => {
             console.log(res.data)
@@ -84,6 +85,33 @@ class Private extends Component {
             [prop]: val
         })
     }
+//EDITING
+
+    updateArt = id => {
+        const { title, description, painting_url, price } = this.state;
+        console.log(id);
+        axios.put(`/api/gallery/${id}`, { name: title,description: description,  painting_url: painting_url, price: price }).then(res => {
+            console.log(res.data)
+          this.setState({
+            title: '',
+            description: '',
+            painting_url: '',
+            price: '',
+          });
+        });
+      };
+    //   onEdit(id){
+    //         axios.get(`/api/gallery/${id}`).then(res => {
+    //             this.setState({
+    //                 title: res.name,
+    //                 description: res.description,
+    //                 painting_url: res.painting_url,
+    //                 price: res.price
+    //             })
+    //             this.updateArt(res.id);
+    //         })
+    //       }
+
 
     destroySession = async () => {
         await axios.post('/auth/logout')
@@ -94,6 +122,7 @@ class Private extends Component {
      postArt = async () =>{
         console.log(this.state)
         let art = {
+            
             title: this.state.title,
             description: this.state.description,
             painting_url: this.state.painting_url,
@@ -129,9 +158,11 @@ class Private extends Component {
                     <img src={artwork.painting_url} />
                     <p>{artwork.description}</p>
                     <p>{artwork.price}</p>
+                        <div className='artistEditButton'><button onClick={() => this.updateArt(artwork.id)}>Edit</button>
+                        </div>
                     
                         <button onClick={() => this.deleteArt(artwork.id)}>
-                            Delete
+                        X
                         </button>
                     
                 </div>

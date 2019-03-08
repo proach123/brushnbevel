@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Team from './components/Team/Team';
 import Admin from './components/Admin/Admin';
 
+
 export default (
     <Switch>
         <Route path='/private' component={Private}/>
@@ -17,3 +18,4 @@ export default (
         <Route exact path='/' component={Dashboard}/>
     </Switch>
 )
+

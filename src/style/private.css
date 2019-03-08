@@ -22,15 +22,35 @@
 .artworkdisplay img {
   width: 25vw;
   height: 39vh;
-  margin: 5px;
+  margin: 15px;
+  position: relative;
+  bottom: 1vh;
+}
+
+.artworkdisplay p {
+  position: relative;
+  bottom: 3vh;
+}
+
+.artworkdisplay button {
+  position: relative;
+  bottom: 56vh;
+  left: 12vw;
 }
 
 .artworkdisplay {
+  padding: 5px;
   width: 28vw;
-  height: 50vh;
-  margin: 5px;
+  height: 49vh;
+  margin: 16px;
   position: relative;
   right: 10vw;
   background: whitesmoke;
+}
+
+.artworkdisplay .artistEditButton {
+  position: relative;
+  right: 25vw;
+  bottom: -2vh;
 }
 /*# sourceMappingURL=private.css.map */
