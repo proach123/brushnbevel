@@ -1,3 +1,4 @@
+
  module.exports={
 
 createArt: (req, res) => {
@@ -32,6 +33,7 @@ createArt: (req, res) => {
     const db = req.app.get('db');
     const { id } = req.params;
     const { name, description, painting_url, price } = req.body;
+
     db.art.update_art([id, name, description, painting_url, price]).then(resp => {
       console.log(resp)
       res.status(200).send(resp);

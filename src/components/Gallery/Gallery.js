@@ -4,6 +4,12 @@ import axios from 'axios'
 import {updateUser} from '../../geese/reducer'
 import {clearUser} from '../../geese/reducer'
 
+
+
+
+
+
+
 class Gallery extends Component{
 
     render(){
@@ -24,3 +30,5 @@ const mapDispatchToProps = {
     clearUser
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Gallery);
+
+

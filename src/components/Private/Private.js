@@ -4,6 +4,7 @@ import axios from 'axios'
 import {updateUser} from '../../geese/reducer'
 import {clearUser} from '../../geese/reducer'
 import '../../style/private.scss'
+import Edit from './Edit'
 
 
 class Private extends Component {
@@ -15,7 +16,7 @@ class Private extends Component {
             title: '',
             description: '',
             painting_url: '',
-            price: '',
+            price: 0,
             artworks: [],
             img:'',
             
@@ -32,8 +33,8 @@ class Private extends Component {
     }
 
     checkUser = async () => {
-        const {artist_id}= this.props;
-        if(artist_id) {
+        const {artist_id, authorized}= this.props;
+        if(artist_id && !authorized) {
             try {
                 let res = await axios.get('api/isadmin')
                 this.props.updateUser(res.data)
@@ -89,6 +90,7 @@ class Private extends Component {
 
     updateArt = id => {
         const { title, description, painting_url, price } = this.state;
+        this.onEdit();
         console.log(id);
         axios.put(`/api/gallery/${id}`, { name: title,description: description,  painting_url: painting_url, price: price }).then(res => {
             console.log(res.data)
@@ -96,21 +98,19 @@ class Private extends Component {
             title: '',
             description: '',
             painting_url: '',
-            price: '',
+            price: 0,
+            editing: false
           });
+          
         });
       };
-    //   onEdit(id){
-    //         axios.get(`/api/gallery/${id}`).then(res => {
-    //             this.setState({
-    //                 title: res.name,
-    //                 description: res.description,
-    //                 painting_url: res.painting_url,
-    //                 price: res.price
-    //             })
-    //             this.updateArt(res.id);
-    //         })
-    //       }
+      onEdit = (prop, val) =>{
+        console.log('editing')
+            this.setState({
+                [prop]: val
+            })
+        }
+      
 
 
     destroySession = async () => {
@@ -122,7 +122,7 @@ class Private extends Component {
      postArt = async () =>{
         console.log(this.state)
         let art = {
-            
+
             title: this.state.title,
             description: this.state.description,
             painting_url: this.state.painting_url,
@@ -137,7 +137,7 @@ class Private extends Component {
                 title: '',
             description: '',
             painting_url: '',
-            price: '',
+            price: 0,
             artworks: [],
             img:''
             })
@@ -151,15 +151,20 @@ class Private extends Component {
         
         const { username, img, balance } = this.props;
         const artworks = this.state.artworks.map((artwork) => {
-            console.log(artwork.painting_url)
+            
             return (
                 <div className='artworkdisplay'>
                     <h3>{artwork.name}</h3>
+                    
                     <img src={artwork.painting_url} />
                     <p>{artwork.description}</p>
                     <p>{artwork.price}</p>
-                        <div className='artistEditButton'><button onClick={() => this.updateArt(artwork.id)}>Edit</button>
-                        </div>
+                    <Edit
+                    key={artwork.id}
+                    artwork={artwork}
+                    updateArt={this.updateArt}
+                    onEdit={this.onEdit}
+                    />
                     
                         <button onClick={() => this.deleteArt(artwork.id)}>
                         X
@@ -173,6 +178,7 @@ class Private extends Component {
         return (
             
             <div>
+                
                 <input value={title} onChange={e => this.handleChange('title',e.target.value)} placeholder='Title' />
                 <input value={description}  onChange={e => this.handleChange('description',e.target.value)} placeholder='Description' />
                 <input value={painting_url}  onChange={e => this.handleChange('painting_url',e.target.value)} placeholder='Image Url' />
@@ -200,6 +206,8 @@ const mapDispatchToProps = {
     clearUser
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Private);
+
+
 
 
 
