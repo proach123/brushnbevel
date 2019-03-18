@@ -1,4 +1,10 @@
+.inputbar {
+  background: white;
+}
+
 .artistDisplay {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
+  background-image: linear-gradient(white, black);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,7 +22,6 @@
           align-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  background: lightgrey;
 }
 
 .artworkdisplay img {
@@ -29,7 +34,9 @@
 
 .artworkdisplay p {
   position: relative;
-  bottom: 3vh;
+  bottom: 2vh;
+  color: azure;
+  margin: 0;
 }
 
 .artworkdisplay button {
@@ -45,12 +52,11 @@
   margin: 16px;
   position: relative;
   right: 10vw;
-  background: whitesmoke;
 }
 
 .artworkdisplay .artistEditButton {
   position: relative;
-  right: 25vw;
-  bottom: -2vh;
+  left: -12vw;
+  bottom: 54vh;
 }
 /*# sourceMappingURL=private.css.map */

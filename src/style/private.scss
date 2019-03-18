@@ -1,14 +1,18 @@
 
 
-.artistDisplay{
 
+.inputbar {
+    background: white;
+}
+.artistDisplay{
+    background-image: linear-gradient(white, black); 
     display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	align-content: center;
-   background: lightgrey;
+    
 }
 
 .artworkdisplay img{
@@ -21,7 +25,9 @@
 
 .artworkdisplay p{
     position: relative;
-    bottom: 3vh;
+    bottom: 2vh;
+    color: azure;
+    margin: 0;
 }
 
 .artworkdisplay button{
@@ -37,11 +43,12 @@
     margin: 16px;
     position: relative;
     right: 10vw;
-    background: whitesmoke;
+    
 }
 
  .artworkdisplay .artistEditButton{
     position: relative;
-     right: 25vw;
-     bottom: -2vh
+     left: -12vw;
+     bottom: 54vh;
  }
+

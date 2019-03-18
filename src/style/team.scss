@@ -1,0 +1,42 @@
+body{
+    background-image: linear-gradient(white, black)
+}
+
+.Dustinbio {
+    height: 25vh;
+        
+}
+
+.Dustinbio p{
+    text-align: left;
+    width: 35vw
+}
+
+.teamp {
+    width: 35vw;
+    align-content: center;
+    text-align: left;
+    justify-content: center;
+    
+}
+
+.seperateteam {
+    width: 90vw;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+    justify-content: space-between;
+    
+	align-items: center;
+    align-content: center;
+    padding:10px;
+
+}
+
+
+
+
+.TeamPage {
+
+    height: 150vh;
+}

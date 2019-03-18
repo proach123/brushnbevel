@@ -1,0 +1,26 @@
+
+
+.navbuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:  center;
+    background-image: linear-gradient(black, white);
+    height: 21vh;
+}
+
+.navbuttons button{
+    
+	justify-content: space-around;
+	
+}
+
+.navbuttons img{
+    height: 21vh;
+    width: 13vw;
+    position: absolute;
+    left: 10vw;
+    top: 0vh;
+    
+}
+

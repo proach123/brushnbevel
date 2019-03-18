@@ -5,6 +5,7 @@ import {updateUser} from '../../geese/reducer'
 import {clearUser} from '../../geese/reducer'
 import '../../style/private.scss'
 import Edit from './Edit'
+import Navbar from '../NavBar/Navbar'
 
 
 class Private extends Component {
@@ -148,11 +149,12 @@ class Private extends Component {
     }
 
     render() {
-        
+    
         const { username, img, balance } = this.props;
         const artworks = this.state.artworks.map((artwork) => {
             
             return (
+                
                 <div className='artworkdisplay'>
                     <h3>{artwork.name}</h3>
                     
@@ -177,8 +179,8 @@ class Private extends Component {
         const { title, description, painting_url, price} = this.state
         return (
             
-            <div>
-                
+            <div className='inputbar'>
+                <div className='navcomp'></div><Navbar></Navbar>
                 <input value={title} onChange={e => this.handleChange('title',e.target.value)} placeholder='Title' />
                 <input value={description}  onChange={e => this.handleChange('description',e.target.value)} placeholder='Description' />
                 <input value={painting_url}  onChange={e => this.handleChange('painting_url',e.target.value)} placeholder='Image Url' />

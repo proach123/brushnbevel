@@ -71,6 +71,11 @@ body {
   width: 5vw;
 }
 
+.body {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
+  background-image: linear-gradient(white, black);
+}
+
 .artistDisplay {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -89,21 +94,43 @@ body {
           align-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  background: lightgrey;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
+  background-image: linear-gradient(white, black);
 }
 
 .artworkdisplay img {
   width: 25vw;
   height: 39vh;
-  margin: 5px;
+  margin: 15px;
+  position: relative;
+  bottom: 1vh;
+}
+
+.artworkdisplay p {
+  position: relative;
+  bottom: 2vh;
+  color: azure;
+  margin: 0;
+}
+
+.artworkdisplay button {
+  position: relative;
+  bottom: 56vh;
+  left: 12vw;
 }
 
 .artworkdisplay {
+  padding: 5px;
   width: 28vw;
-  height: 50vh;
-  margin: 5px;
+  height: 49vh;
+  margin: 16px;
   position: relative;
   right: 10vw;
-  background: whitesmoke;
+}
+
+.artworkdisplay .artistEditButton {
+  position: relative;
+  left: -12vw;
+  bottom: 54vh;
 }
 /*# sourceMappingURL=main.css.map */
