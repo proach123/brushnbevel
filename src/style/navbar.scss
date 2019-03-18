@@ -1,12 +1,22 @@
 
+.navdiv{
+    width: 100vw;
+    position: fixed;
+    z-index: 5;
+    margin: 0;
+    top: 0%
+}
+
 
 .navbuttons {
+   
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items:  center;
     background-image: linear-gradient(black, white);
-    height: 21vh;
+    height: 18vh;
+
 }
 
 .navbuttons button{
@@ -16,7 +26,7 @@
 }
 
 .navbuttons img{
-    height: 21vh;
+    height: 18vh;
     width: 13vw;
     position: absolute;
     left: 10vw;

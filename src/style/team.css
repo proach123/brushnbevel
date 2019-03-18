@@ -5,6 +5,8 @@ body {
 
 .Dustinbio {
   height: 25vh;
+  position: relative;
+  top: 30vh;
 }
 
 .Dustinbio p {
@@ -13,6 +15,7 @@ body {
 }
 
 .teamp {
+  top: 10vh;
   width: 35vw;
   -ms-flex-line-pack: center;
       align-content: center;
@@ -44,7 +47,13 @@ body {
   padding: 10px;
 }
 
+.teamp p {
+  top: 25vh;
+}
+
 .TeamPage {
+  position: relative;
+  top: 30vh;
   height: 150vh;
 }
 /*# sourceMappingURL=team.css.map */

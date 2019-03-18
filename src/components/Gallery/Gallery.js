@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 import axios from 'axios'
 import {updateUser} from '../../geese/reducer'
 import {clearUser} from '../../geese/reducer'
+import Navbar from '../NavBar/Navbar'
+import '../../style/gallery.scss'
 
 
 
@@ -14,7 +16,12 @@ class Gallery extends Component{
 
     render(){
         return(
-        <div>Gallery Component</div>
+        <div>
+            <Navbar></Navbar>
+            <div className='gallerydisplay'>
+            a
+            </div>
+            Gallery Component</div>
         )
     }
 

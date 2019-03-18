@@ -3,19 +3,24 @@ body {
   margin: 0;
 }
 
+.dashbody {
+  height: 250vh;
+}
+
 .dashblogpost {
-  background: white;
-  height: 50vh;
-  width: 100vw;
+  background: whitesmoke;
+  height: 100vh;
+  width: 60vw;
   position: relative;
   top: 15vh;
+  left: 20vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   -ms-flex-pack: distribute;
@@ -23,16 +28,19 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.dashblogpost p {
+  text-align: left;
 }
 
 .dashnav {
-  background: white;
-  position: fixed;
-  height: 6vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(white));
+  background-image: linear-gradient(black, white);
+  height: 8vh;
   width: 100%;
-  bottom: 5vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,11 +53,15 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }
 
 .dashnav .dashnavlogo {
@@ -57,7 +69,7 @@ body {
   height: 5vh;
   width: 5vw;
   left: 5vw;
-  bottom: 7vh;
+  bottom: 10vh;
 }
 
 .treeimg {

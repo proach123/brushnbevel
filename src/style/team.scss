@@ -4,15 +4,18 @@ body{
 
 .Dustinbio {
     height: 25vh;
-        
+    position: relative;
+    top: 30vh;
 }
 
 .Dustinbio p{
     text-align: left;
-    width: 35vw
+    width: 35vw;
+    
 }
 
 .teamp {
+    top: 10vh;
     width: 35vw;
     align-content: center;
     text-align: left;
@@ -33,10 +36,13 @@ body{
 
 }
 
-
+.teamp p {
+    top: 25vh;
+}
 
 
 .TeamPage {
-
+    position: relative;
+    top: 30vh;
     height: 150vh;
 }
