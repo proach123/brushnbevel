@@ -14,7 +14,56 @@ import '../../style/gallery.scss'
 
 class Gallery extends Component{
 
+
+    constructor(props){
+        super(props)
+
+        this.state={
+            title: '',
+            description: '',
+            painting_url: '',
+            price: 0,
+            artworks: [],
+            img:'',
+            
+        }
+
+
+    }
+
+    componentDidMount() {
+        this.getArt();
+
+    }
+
+
+
+    getArt(){
+        axios.get('/api/gallery').then(res => {
+            console.log(res.data)
+            this.setState({
+                artworks: res.data
+            })
+        })
+    }
+
+
+
     render(){
+
+        const artworks = this.state.artworks.map((artwork) => {
+            
+            return (
+                
+                <div className='artworkdisplay'>
+                    <h3>{artwork.name}</h3>
+                    <img src={artwork.painting_url} />
+                    <p>{artwork.description}</p>
+                    <p>{artwork.price}</p>
+                    </div>
+            )
+        })
+        
         return(
         <div>
             <Navbar></Navbar>
@@ -23,9 +72,12 @@ class Gallery extends Component{
             </div>
             Gallery Component</div>
         )
+    
     }
 
 }
+
+
 
 const mapStateToProps = reduxState => {
     return {

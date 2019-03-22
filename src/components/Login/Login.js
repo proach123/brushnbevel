@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import {updateUser} from './../../geese/reducer'
 import { Link } from 'react-router-dom'
 
+
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -67,7 +68,9 @@ class Login extends Component {
     render() {
         const {username, password} = this.state
         return (
+            
             <div>
+                <h3>LOGIN</h3>
                <input value={username} onChange={e => this.handleChange('username',e.target.value)} />
                <input type='password' value={password} onChange={e => this.handleChange('password', e.target.value)} />
                <button onClick={this.register}>Register</button>

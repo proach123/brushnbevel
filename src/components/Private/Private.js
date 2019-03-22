@@ -82,7 +82,7 @@ class Private extends Component {
       };
 
     handleChange(prop, val){
-        console.log(prop, val)
+        
         this.setState({
             [prop]: val
         })
@@ -180,15 +180,18 @@ class Private extends Component {
         return (
             
             <div className='inputbar'>
-                <div className='navcomp'></div><Navbar></Navbar>
+            <Navbar/>
+            <div className='inputs'>
+                
                 <input value={title} onChange={e => this.handleChange('title',e.target.value)} placeholder='Title' />
                 <input value={description}  onChange={e => this.handleChange('description',e.target.value)} placeholder='Description' />
                 <input value={painting_url}  onChange={e => this.handleChange('painting_url',e.target.value)} placeholder='Image Url' />
                 <input value={price}  onChange={e => this.handleChange('price',e.target.value)} placeholder='price' />
                 <button onClick={this.postArt}>Submit Art</button>
                 <button onClick={this.destroySession}>Logout</button>
+            </div>
                 <h1>{username}</h1>
-                <img src={img} alt='user' />
+                
                 <p>{balance}</p>
                 <div className='displayflex'>
                 <div className='artistDisplay'>{artworks}</div>
