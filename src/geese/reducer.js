@@ -3,6 +3,7 @@ const initialState = {
     username: '',
     balance: 0,
     img: '',
+    authorized: false,
 }
 
 const UPDATE_USER = 'UPDATE_USER';
@@ -27,9 +28,9 @@ export default function reducer(state = initialState, action) {
     switch(type) {
 
         case UPDATE_USER:
-        const {id, username, balance} = payload;
+        const {id, username, balance, authorized} = payload;
         const img = payload.user_img;
-        return {...state, id, username, balance, img};
+        return {...state, id, username, balance, authorized};
 
         case CLEAR_USER:
         return {...state, id: 0, username: '', balance: 0, img: ''}

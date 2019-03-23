@@ -7,7 +7,7 @@ module.exports = {
         const db = req.app.get('db');
         let takenUsername = await db.auth.check_username({username});
         takenUsername = +takenUsername[0].count;
-
+        
         if(takenUsername !== 0){
             return (res.sendStatus(409))
         }
@@ -26,7 +26,9 @@ module.exports = {
         const {session} = req;
         const db = req.app.get("db");
         let user = await db.auth.login({username})
+        
         user = user[0]
+        
         if (!user) {
             return (res.sendStatus(404))
         }
@@ -35,7 +37,7 @@ module.exports = {
         if (authenticated) {
             delete user.password;
             session.user = user;
-            console.log(session)
+            
             res.status(200).send(session.user);
         } else {
             res.sendStatus(401);
@@ -57,8 +59,33 @@ module.exports = {
             res.sendStatus(409)
         }
     },
+
+
     destroySession: (req, res) => {
         req.session.destroy();
         res.sendStatus(200)
+    },
+
+
+
+    handlePayment: (req, res) => {
+        const { amount, token:{id}} = req.body
+        stripe.charges.create(
+            {
+                amount: amount,
+                currency: "usd",
+                source: id,
+                description: "Test charge"
+            },
+            (err, charge) => {
+                if(err) {
+                    console.log(err)
+                    return res.status(500).send(err)
+                } else {
+                    console.log(charge)
+                    return res.status(200).send(charge)
+                }
+            }
+        )
     }
 }

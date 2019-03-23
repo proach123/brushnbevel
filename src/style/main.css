@@ -69,12 +69,12 @@ body {
   height: 4vh;
   width: 4vw;
   left: 4vw;
-  bottom: 10vh;
+  bottom: 12vh;
 }
 
 .treeimg {
-  width: 900vw;
-  height: 80vh;
+  width: 100vw;
+  height: 90vh;
 }
 
 .dashlogo {
@@ -84,6 +84,37 @@ body {
 
 .gallerydisplay {
   height: 100vh;
+}
+
+.gallerydisplay {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
+  background-image: linear-gradient(white, black);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 100vh;
+}
+
+.artworkdisplay img {
+  width: 25vw;
+  height: 39vh;
+  margin: 15px;
+  position: relative;
+  bottom: 1vh;
 }
 
 .inputs {

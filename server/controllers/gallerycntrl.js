@@ -18,6 +18,14 @@ createArt: (req, res) => {
       res.status(200).send(response)
     })
   },
+
+  getApprovedArt: (req, res) => {
+    const db = req.app.get('db');
+    db.art.admin_art_display().then(response => {
+      res.status(200).send(response)
+    }
+    )
+  },
   deleteArt: (req, res) => {
     const db = req.app.get('db');
     let { id } = req.params;
@@ -49,6 +57,28 @@ createArt: (req, res) => {
         res.status(200).send(resp[0]);
       })
       .catch(err => console.log(err));
+  },
+
+  approveArt: (req, res) => {
+    console.log('approved art hit')
+    const db = req.app.get('db');
+    const { id } = req.params;
+    const { gallery_approved } = req.body;
+    console.log(req.body)
+
+    db.art.approve_art([id, gallery_approved]).then(resp => {
+      console.log(resp)
+      res.status(200).send(resp);
+    });
+  },
+
+  getGalleryArt: (req, res) => {
+    const db= req.app.get('db');
+    
+
+    db.art.get_gallery_art().then(response => {
+      res.status(200).send(response)
+    })
   },
 
 }

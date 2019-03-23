@@ -5,7 +5,7 @@ import {updateUser} from '../../geese/reducer'
 import {clearUser} from '../../geese/reducer'
 import Navbar from '../NavBar/Navbar'
 import '../../style/gallery.scss'
-
+import { Link } from 'react-router-dom'
 
 
 
@@ -32,14 +32,14 @@ class Gallery extends Component{
     }
 
     componentDidMount() {
-        this.getArt();
+        this.getArtApproved();
 
     }
 
 
 
-    getArt(){
-        axios.get('/api/gallery').then(res => {
+    getArtApproved(){
+        axios.get('/api/galleryapproved').then(res => {
             console.log(res.data)
             this.setState({
                 artworks: res.data
@@ -47,9 +47,8 @@ class Gallery extends Component{
         })
     }
 
-
-
     render(){
+        const { username, img, balance } = this.props;
 
         const artworks = this.state.artworks.map((artwork) => {
             
@@ -59,7 +58,9 @@ class Gallery extends Component{
                     <h3>{artwork.name}</h3>
                     <img src={artwork.painting_url} />
                     <p>{artwork.description}</p>
+                    <Link to='/store'>
                     <p>{artwork.price}</p>
+                    </Link>
                     </div>
             )
         })
@@ -67,10 +68,10 @@ class Gallery extends Component{
         return(
         <div>
             <Navbar></Navbar>
-            <div className='gallerydisplay'>
-            a
+
+            <div className='gallerydisplay'>hello{artworks}</div>
             </div>
-            Gallery Component</div>
+            
         )
     
     }

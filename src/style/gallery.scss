@@ -4,3 +4,23 @@
 .gallerydisplay{
     height: 100vh;
 }
+
+.gallerydisplay{
+    background-image: linear-gradient(white, black); 
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+    align-content: center;
+    height: 100vh;
+    
+}
+
+.artworkdisplay img {
+    width: 25vw;
+    height: 39vh;
+    margin: 15px;
+    position: relative;
+    bottom: 1vh;
+}

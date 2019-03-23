@@ -14,6 +14,7 @@ const express = require('express'),
     connectionString: CONNECTION_STRING
     })
     
+    app.use( express.static( `${__dirname}/../build` ) );
     app.use(express.json());
     app.use(sessions({
         store: new pgSession({
@@ -47,3 +48,12 @@ app.get('/api/gallery', gctrl.showArtistArt)
 app.delete('/api/gallery/:id', gctrl.deleteArt)
 app.put('/api/gallery/:id', gctrl.updateArtwork)
 app.get('/api/gallery/:id' , gctrl.getArt)
+
+app.get('/api/galleryapproved', gctrl.getGalleryArt)
+app.get('/api/gall', gctrl.getApprovedArt)
+app.put('/api/gall/:id', gctrl.approveArt)
+
+
+//Stripe payment
+
+app.post('/api/payment', ctrl.handlePayment)

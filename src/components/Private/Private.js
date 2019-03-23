@@ -34,15 +34,20 @@ class Private extends Component {
     }
 
     checkUser = async () => {
-        const {artist_id, authorized}= this.props;
-        if(artist_id && !authorized) {
-            try {
-                let res = await axios.get('api/isadmin')
-                this.props.updateUser(res.data)
-                this.props.history.push('/admin')
-                 } catch (err) {
-                 }
-        } else {
+        const {authorized}= this.props;
+        console.log('checking if admin',authorized)
+        if(authorized == true) {
+            this.props.history.push('/admin')
+        }
+        // if(artist_id && !authorized) {
+        //     try {
+        //         let res = await axios.get('api/isadmin')
+        //         this.props.updateUser(res.data)
+        //         this.props.history.push('/admin')
+        //          } catch (err) {
+        //          }
+        // }
+         else {
             this.props.history.push('/private')
         }
     }
@@ -104,7 +109,9 @@ class Private extends Component {
           });
           
         });
+        this.getArt();
       };
+
       onEdit = (prop, val) =>{
         console.log('editing')
             this.setState({
@@ -113,7 +120,7 @@ class Private extends Component {
         }
       
 
-
+//session destroyer
     destroySession = async () => {
         await axios.post('/auth/logout')
         this.props.clearUser();
@@ -202,9 +209,7 @@ class Private extends Component {
 }
 
 const mapStateToProps = reduxState => {
-    return {
-        
-    }
+    return reduxState
 }
 const mapDispatchToProps = {
     updateUser,
