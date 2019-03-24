@@ -14,6 +14,11 @@ body {
   width: 35vw;
 }
 
+.teamnav {
+  position: relative;
+  bottom: 20vh;
+}
+
 .teamp {
   top: 10vh;
   width: 35vw;

@@ -21,6 +21,7 @@ class Navbar extends Component {
             <Link to={'/login'}>
             <button>Artist Log in</button>
             </Link>
+            
             <div className='dashnavlogo'>
             </div>
           <img src='https://brushandbevelcom.files.wordpress.com/2018/12/cropped-The-Good-Logo-3-6.png' alt='brush and bevel logo' height='200' width='200'/>

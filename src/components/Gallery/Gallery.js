@@ -69,7 +69,7 @@ class Gallery extends Component{
         <div>
             <Navbar></Navbar>
 
-            <div className='gallerydisplay'>hello{artworks}</div>
+            <div className='gallerydisplay'>{artworks}</div>
             </div>
             
         )

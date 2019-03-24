@@ -21,7 +21,7 @@
 	justify-content: center;
 	align-items: center;
     align-content: center;
-    height: 200vh;
+    height: 170vh;
     
 }
 
@@ -43,10 +43,30 @@
 
 .artworkdisplay button{
     position: relative;
-    bottom: 56vh;
+    bottom: 65vh;
     left: 12vw;
     
 }
+
+button{
+    
+        padding: 10px;
+        justify-content: space-around;
+        color: black;
+        background-image: linear-gradient(black,white);
+        border: 2px solid gray;
+        border-radius: 6px; 
+    
+}
+    
+button:hover{
+        background-image: linear-gradient(white, black);
+          color: white;
+    }
+
+
+
+
 
 .artworkdisplay {
     padding: 5px;
@@ -61,7 +81,19 @@
 
  .artworkdisplay .artistEditButton{
     position: relative;
-     left: -12vw;
-     bottom: 54vh;
+     left: -13vw;
+     bottom: 59vh;
  }
 
+ h3{
+     text-align: center;
+     text-shadow: 1px 1px grey;
+ }
+
+ p{
+     text-decoration: none;
+ }
+
+.artworkdisplay  img{
+    box-shadow: 10px 10px 5px grey;
+ }

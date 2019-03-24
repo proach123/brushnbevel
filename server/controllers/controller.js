@@ -11,7 +11,7 @@ module.exports = {
         if(takenUsername !== 0){
             return (res.sendStatus(409))
         }
-        
+            
         let salt = bcrypt.genSaltSync(10);
         let hash = bcrypt.hashSync(password, salt);
         let user = await db.auth.register(

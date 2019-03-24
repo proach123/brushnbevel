@@ -1,8 +1,4 @@
 .gallerydisplay {
-  height: 100vh;
-}
-
-.gallerydisplay {
   background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
   background-image: linear-gradient(white, black);
   display: -webkit-box;
@@ -22,7 +18,7 @@
           align-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  height: 100vh;
+  height: 50vh;
 }
 
 .artworkdisplay img {

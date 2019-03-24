@@ -5,6 +5,7 @@ import {updateUser} from '../../geese/reducer'
 import {clearUser} from '../../geese/reducer'
 import Navbar from '../NavBar/Navbar'
 import Approve from './Approve'
+import '../../style/admin.scss'
 
 class Admin extends Component{
 
@@ -56,6 +57,12 @@ class Admin extends Component{
         this.getArtApproved();
       };
 
+      destroySession = async () => {
+        await axios.post('/auth/logout')
+        this.props.clearUser();
+        this.props.history.push('/login')
+    }
+
 
     render(){
         const { username, img, balance } = this.props;
@@ -84,12 +91,14 @@ class Admin extends Component{
         return(
         <div>
             <Navbar></Navbar>
-            <button onClick={this.destroySession}>Logout</button>
-            <div className='gallerydisplay'>hello{artworks}</div>
-            <div className='gallerydis'>
-            a
+            <div className='admingallery'>
+                <button onClick={this.destroySession}>Logout</button>
             </div>
-            Gallery Component</div>
+            <div className='gallerydisplay'>{artworks}</div>
+            <div className='gallerydis'>
+            
+            </div>
+            </div>
         )
     
     }

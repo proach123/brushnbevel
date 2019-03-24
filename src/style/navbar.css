@@ -26,13 +26,25 @@
 }
 
 .navbuttons button {
+  padding: 10px;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  color: black;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(white));
+  background-image: linear-gradient(black, white);
+  border: 2px solid gray;
+  border-radius: 6px;
+}
+
+.navbuttons button:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
+  background-image: linear-gradient(white, black);
+  color: white;
 }
 
 .navbuttons img {
   height: 18vh;
-  width: 13vw;
+  width: 10vw;
   position: absolute;
   left: 10vw;
   top: 0vh;
