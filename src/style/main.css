@@ -185,8 +185,25 @@ body {
 
 .artworkdisplay button {
   position: relative;
-  bottom: 56vh;
+  bottom: 65vh;
   left: 12vw;
+}
+
+button {
+  padding: 10px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: black;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(white));
+  background-image: linear-gradient(black, white);
+  border: 2px solid gray;
+  border-radius: 6px;
+}
+
+button:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
+  background-image: linear-gradient(white, black);
+  color: white;
 }
 
 .artworkdisplay {
@@ -201,7 +218,158 @@ body {
 
 .artworkdisplay .artistEditButton {
   position: relative;
-  left: -12vw;
-  bottom: 54vh;
+  left: -13vw;
+  bottom: 59vh;
+}
+
+h3 {
+  text-align: center;
+  text-shadow: 1px 1px grey;
+}
+
+p {
+  text-decoration: none;
+}
+
+.artworkdisplay img {
+  -webkit-box-shadow: 10px 10px 5px grey;
+          box-shadow: 10px 10px 5px grey;
+}
+
+.admingallery {
+  position: absolute;
+  top: 25vh;
+}
+
+.artworkdisplay {
+  position: relative;
+  top: 0vh;
+}
+
+.gallerydisplay {
+  top: 50vh;
+  height: 200vh;
+}
+
+.stripe {
+  position: absolute;
+  bottom: 50vh;
+  left: 44vw;
+}
+
+.navdiv {
+  width: 100vw;
+  position: fixed;
+  z-index: 5;
+  margin: 0;
+  top: 0%;
+}
+
+.navbuttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(white));
+  background-image: linear-gradient(black, white);
+  height: 18vh;
+}
+
+.navbuttons button {
+  padding: 10px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: black;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(white));
+  background-image: linear-gradient(black, white);
+  border: 2px solid gray;
+  border-radius: 6px;
+}
+
+.navbuttons button:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
+  background-image: linear-gradient(white, black);
+  color: white;
+}
+
+.navbuttons img {
+  height: 18vh;
+  width: 10vw;
+  position: absolute;
+  left: 10vw;
+  top: 0vh;
+}
+
+body {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
+  background-image: linear-gradient(white, black);
+}
+
+.Dustinbio {
+  height: 25vh;
+  position: relative;
+  top: 30vh;
+}
+
+.Dustinbio p {
+  text-align: left;
+  width: 35vw;
+}
+
+.teamnav {
+  position: relative;
+  bottom: 20vh;
+}
+
+.teamp {
+  top: 10vh;
+  width: 35vw;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: left;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.seperateteam {
+  width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 10px;
+}
+
+.teamp p {
+  top: 25vh;
+}
+
+.TeamPage {
+  position: relative;
+  top: 30vh;
+  height: 150vh;
 }
 /*# sourceMappingURL=main.css.map */
