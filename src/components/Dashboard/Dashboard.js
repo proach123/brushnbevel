@@ -70,12 +70,6 @@ class Dashboard extends Component {
             <p>Lorem ipsem</p>
             <div>------------------------------------------------------------------------------------</div>
             </div>
-        
-
-            
-                Dashboard Component
-
-                
 
             </div>
         )
