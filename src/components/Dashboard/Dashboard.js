@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../style/dashboard.css'
+import '../../style/dashboard.scss'
 import { Link } from 'react-router-dom'
 
 class Dashboard extends Component {
