@@ -15,6 +15,7 @@ const express = require('express'),
     })
     
     app.use( express.static( `${__dirname}/../build` ) );
+    
     app.use(express.json());
     app.use(sessions({
         store: new pgSession({
